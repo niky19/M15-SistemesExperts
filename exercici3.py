@@ -1,9 +1,23 @@
-def fibotete(lastResult, currentNumber, userInput, count):
+#Renaming files
+import os
+def nameChanger():
+    #se podria hacer en 1 solo input
+    directory = input("Ruta del directori")
+    fileName = input("Nom actual de l'arxiu:")
+    newFileName = input("Nou nom de l'arxiu:")
+   
+    if os.path.isdir(directory):
 
-   if count != userInput:
-      count += 1
-      result = lastResult + currentNumber
-      print(f"f({count}) = {result}")
-      fibotete(currentNumber,result,userInput,count)
+        for file in os.listdir(directory):
+            if file == fileName:
+               # os.rename(f"{directory}/{file}", f"{directory}/{newFileName}")
+                os.rename(os.path.join(directory, file), os.path.join(directory, newFileName)) #el path.join comprueba que el archivo existe en ese directorio
+                print(f"Arxiu renombrat: '{file}' -> '{newFileName}'")
+                return
+        print(f"No existeix cap arxiu amb el nom '{fileName}'")
 
-fibotete(1,0,int(input()), 0)
+    else:
+        print("Ruta no vàlida.")
+
+
+nameChanger()

@@ -26,7 +26,7 @@ def payment(result):
     moneyGiven = 0
     
     while moneyGiven < result:
-        print("Introdueix l'import a pagar:")
+        print("Introdueix l'import a pagar.")
         print(f"Falten: {result - moneyGiven}")
         moneyGiven += float(input())
     if moneyGiven >  result:
@@ -40,7 +40,7 @@ def ticketMachine():
                     Ticket("T-Trimeste", 145.30),
                     Ticket("T-Jove", 105.00)]
 
-    print("Si us plau, escull el numero de bitllet vols comprar. Els preus actuals son per 1 zona")
+    print("Si us plau, escull el numero del bitllet vols comprar.")
     for ticket in enumerate(metroTickets):
         print(ticket)
     
