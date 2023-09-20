@@ -27,7 +27,7 @@ def payment(result):
     
     while moneyGiven < result:
         print("Introdueix l'import a pagar.")
-        print(f"Falten: {result - moneyGiven}")
+        print(f"Falten: {round(result - moneyGiven, 2)}")
         moneyGiven += float(input())
     if moneyGiven >  result:
         print(f"Canvi: {moneyGiven - result}")
