@@ -1,44 +1,25 @@
 #tauler d'escacs
-class Piece:
-   def __init__(self, type:str, isWhite:bool, positionY:int, positionX:int):
-        self.type = type
-        self.isWhite = True
-        self.positionY = positionY
-        self.positionX = positionX
-
-
-def setUpBoard():
-     print("Benvingut al tauller d'escacs")
-     board = [
-          ['□','■','□','■','□','■','□','■','1'],
-          ['■','□','■','□','■','□','■','□','2'],
-          ['□','■','□','■','□','■','□','■','3'],
-          ['■','□','■','□','■','□','■','□','4'],
-          ['□','■','□','■','□','■','□','■','5'],
-          ['■','□','■','□','■','□','■','□','6'],
-          ['□','■','□','■','□','■','□','■','7'],
-          ['■','□','■','□','■','□','■','□','8'],
-          ['A','B','C','D','E','F','G','H',' ']
-     ]
+def setUpBoard(size):
+    abc = ['A','B','C','D','E','F','G','H','I', 'J', 'K', 'L', 'M']
+    board = []
+    for yIndex in range(size):
+        row = []
+        for xIndex in range(size):
+            row.insert(xIndex, getCell(xIndex, yIndex))
+        row.append(yIndex+1)
+        board.insert(yIndex,row)
+    board.append(abc[:size]) #para el tamaño de la lista de letras
+    return board    
     
-     for row in board:
-        print(" ".join(row))
+def getCell(x, y): #obtener las fichas del tablero
+    if((x + y) % 2 == 0): return '■'
+    return '□'
 
-     pieces = [
-         Piece("♖", True, 0, 0),
-         Piece("♘", True, 0, 1),
-         Piece("♗", True, 0, 2),
-         Piece("♕", True, 0, 3),
-         Piece("♔", True, 0, 4),
-         Piece("♗", True, 0, 5),
-         Piece("♘", True, 0, 6),
-         Piece("♖", True, 0, 0)
-     ]
-     
-     player1Movement = input(Piece)
-     
 
-     move = board[player1Movement]
-
-   
-setUpBoard()
+def chess(size):
+     print("Benvingut al tauller d'escacs")
+     board2 = setUpBoard(size)
+     for row in board2:
+        print(row)
+    
+chess(8)
