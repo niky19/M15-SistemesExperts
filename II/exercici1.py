@@ -2,11 +2,8 @@
 import csv
 
 def csvReader():
-    openMyData = open('II/basket_players.csv', 'w')
-    data = csv.reader(openMyData)
-    print(data)
+    data = csv.reader(open('II/basket_players.csv', 'r'))
     for i, fila in enumerate(data):
         print(i,fila)
-    
     
 csvReader()
