@@ -1,5 +1,7 @@
 import csv
+import matplotlib as plt
 import numpy as np
+<<<<<<< HEAD
 import matplotlib.pyplot as plt
 
 def meteocat():
@@ -34,5 +36,15 @@ def meteocat():
     plt.title('Comparativa de la temperatura media diaria en febrero de 2022')
     plt.legend()
     plt.show()"""
+=======
+###el formato de fecha es mes-dia
+def meteocat():
+    data_estacions = np.genfromtxt('IV/2020_MeteoCat_Estacions.csv', delimiter=';', skip_header=1, encoding='utf-8')
+    data_estacions_detall = np.genfromtxt('IV/2022_MeteoCat_Detall_Estacions.csv', delimiter=';', skip_header=1, encoding='utf-8')
+    data_metadades = np.genfromtxt('IV/MeteoCat_Metadades.csv', delimiter=';', skip_header=1, encoding='utf-8')
+
+    # print(data_estacions)
+    
+>>>>>>> 9a4dc4b5ebcdb2cbe9eacb22cc479e92cb7b59bc
 
 meteocat()
