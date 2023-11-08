@@ -4,20 +4,19 @@ import matplotlib.pyplot as plt
 
 def meteocat():
     with open('IV/2020_MeteoCat_Estacions.csv', 'r', encoding='utf-8') as f:
-        data_estacions = np.array(list(csv.reader(f, delimiter=';')))
+        estacions = np.array(list(csv.reader(f, delimiter=';')))
 
     with open('IV/2022_MeteoCat_Detall_Estacions.csv', 'r', encoding='utf-8') as f:
-        data_estacions_detall = np.array(list(csv.reader(f, delimiter=';')))
+        estacions_detall = np.array(list(csv.reader(f, delimiter=';')))
 
     with open('IV/MeteoCat_Metadades.csv', 'r',encoding='utf-8') as f:
-        data_metadades = np.array(list(csv.reader(f, delimiter=';')))
+        metadades = np.array(list(csv.reader(f, delimiter=';')))
 
-    print(data_estacions)
-    print(data_estacions_detall)
-    print(data_metadades)
+    print(estacions.shape)
+    print(estacions_detall.shape)
+    print(metadades.shape)
 
-    todojunto = np.concatenate((data_estacions, data_estacions_detall, data_metadades))
-    print(np.sort(todojunto, axis=0))
+    
 
     
 
