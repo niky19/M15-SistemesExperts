@@ -1,4 +1,5 @@
 
+#hola niki del futuro recuerda editar elcodigo para que el uso de la lista sirva para algo XD
 # Al .csv, les paraules Heigth i Weigth estan mal escrits, s'haurien de canviar per Height i Weight. No ho he modificat perquè no sé si és un error o si és a propòsit.
 import csv
 
